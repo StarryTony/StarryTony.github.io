@@ -1,0 +1,33 @@
+---
+title: Contact
+icon: fa-envelope
+order: 4
+---
+
+<script type='text/javascript' language='javascript'>
+function sendEmail() {
+  try{
+    var subject=document.getElementById("mailSub").value;
+    var mailBody=document.getElementById("mailBody").value;
+
+    var link = "mailto:meteorq@live.co.uk"+
+               "?subject=" + escape(subject)+
+               "&body=" + escape(mailBody);
+    window.location.href = link;
+  }catch (e){
+    alert(e);
+  }
+}
+</script>
+
+<form method="post" action="javascript:sendEmail()">
+  <div class="row">
+    <div class="12u$"><input id="mailSub" type="text" name="name" placeholder="Subject" /></div>
+    <div class="12u$">
+      <textarea id="mailBody" name="message" placeholder="Message"></textarea>
+    </div>
+    <div class="12u$">
+      <input id="sendEmail" type="submit" value="Send Message" />
+    </div>
+  </div>
+</form>
